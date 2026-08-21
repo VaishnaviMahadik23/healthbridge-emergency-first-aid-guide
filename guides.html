@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Browse HealthBridge's educational first-aid information guides."
+    >
+    <title>First-aid Guides | HealthBridge</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-page="guides">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-health">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="HealthBridge home">
+                <span class="brand-mark">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                </span>
+                HealthBridge
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="guides.html">First-aid guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emergency.html">Emergency info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            <i class="bi bi-bookmark-heart"></i>
+                            Saved
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="theme-toggle"
+                            id="themeToggle"
+                            type="button"
+                            aria-label="Toggle dark mode"
+                        >
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Educational first-aid library</p>
+                <h1>Find a first-aid guide</h1>
+                <p>
+                    Search concise general information. In a serious or
+                    life-threatening emergency, contact local emergency services.
+                </p>
+            </div>
+        </section>
+
+        <section class="guides-section">
+            <div class="container">
+                <div class="safety-banner">
+                    <i class="bi bi-shield-exclamation"></i>
+                    <div>
+                        <strong>Educational information, not medical care.</strong>
+                        <br>
+                        These guides do not replace professional medical advice,
+                        diagnosis, treatment, or emergency services.
+                    </div>
+                </div>
+
+                <div class="filter-panel">
+                    <div class="search-wrap">
+                        <i class="bi bi-search"></i>
+                        <input
+                            id="searchInput"
+                            type="search"
+                            placeholder="Search guides, e.g. burns or choking"
+                            aria-label="Search guides"
+                            autocomplete="off"
+                        >
+                        <div
+                            class="suggestions d-none"
+                            id="suggestions"
+                            role="listbox"
+                        ></div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                        <div id="categoryFilters" class="filter-chips"></div>
+
+                        <select
+                            id="sortSelect"
+                            class="form-select form-select-sm"
+                            aria-label="Sort guides"
+                        >
+                            <option value="default">Recommended order</option>
+                            <option value="az">A–Z</option>
+                        </select>
+
+                        <button
+                            id="clearFilters"
+                            class="btn btn-sm btn-link"
+                            type="button"
+                        >
+                            Clear filters
+                        </button>
+                    </div>
+                </div>
+
+                <div id="resultsMeta" class="results-meta" aria-live="polite"></div>
+
+                <div id="guidesGrid" class="row g-4">
+                    <div class="loading-state">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading</span>
+                        </div>
+                        <p>Loading educational guides…</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div
+        class="modal fade"
+        id="guideModal"
+        tabindex="-1"
+        aria-labelledby="guideModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button
+                        class="back-link d-none"
+                        id="modalBack"
+                        type="button"
+                    >
+                        <i class="bi bi-arrow-left"></i>
+                        Back
+                    </button>
+
+                    <h2 class="modal-title fs-4" id="guideModalLabel">
+                        Guide
+                    </h2>
+
+                    <button
+                        class="btn-close"
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+
+                <div id="guideDetail" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-compact">
+        <div class="container">
+            <div class="footer-bottom">
+                © 2026 HealthBridge · Educational information only—not a
+                replacement for emergency services or professional care.
+            </div>
+        </div>
+    </footer>
+
+    <button
+        class="scroll-top"
+        id="scrollTop"
+        type="button"
+        aria-label="Scroll to top"
+    >
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="appToast" role="status" aria-live="polite">
+            <div class="toast-body d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success"></i>
+                <span></span>
+                <button
+                    class="btn-close ms-auto"
+                    type="button"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                ></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/guides.js"></script>
+</body>
+</html>

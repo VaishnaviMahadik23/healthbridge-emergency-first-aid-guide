@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="HealthBridge provides clear, calm educational first-aid and emergency preparedness information."
+    >
+    <title>HealthBridge | Emergency First-Aid Information Guide</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-page="home">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-health">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="HealthBridge home">
+                <span class="brand-mark">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                </span>
+                HealthBridge
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+                aria-controls="mainNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="guides.html">First-aid guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="emergency.html">Emergency info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">
+                            <i class="bi bi-bookmark-heart"></i>
+                            Saved
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            class="theme-toggle"
+                            id="themeToggle"
+                            type="button"
+                            aria-label="Toggle dark mode"
+                            data-bs-toggle="tooltip"
+                            title="Toggle theme"
+                        >
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container position-relative">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <p class="eyebrow">
+                            <i class="bi bi-shield-check"></i>
+                            Clear, calm educational guidance
+                        </p>
+
+                        <h1>
+                            Emergency Information When
+                            <em>Every Second</em> Matters
+                        </h1>
+
+                        <p class="hero-copy">
+                            Find understandable first-aid information and practical
+                            preparedness guidance—designed to help you stay informed
+                            while professional help is on its way.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a class="btn btn-primary btn-lg" href="guides.html">
+                                Find First-Aid Information
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a class="btn btn-soft btn-lg" href="#help">
+                                How it works
+                            </a>
+                        </div>
+
+                        <p class="hero-note">
+                            <i class="bi bi-info-circle"></i>
+                            Educational information only. In a life-threatening
+                            emergency, contact local emergency services now.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="hero-card">
+                            <div class="pulse-ring">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+
+                            <p class="text-uppercase small fw-bold letter-space">
+                                Remember
+                            </p>
+
+                            <h3>Safety first. Help is essential.</h3>
+
+                            <p>
+                                Stay calm, assess safety, and seek professional
+                                emergency support when needed.
+                            </p>
+
+                            <div class="hero-card-line">
+                                <i class="bi bi-telephone-outbound"></i>
+                                Contact local emergency services
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency-strip">
+            <div class="container d-flex align-items-center gap-3">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+
+                <div>
+                    <strong>This is not emergency care.</strong>
+                    HealthBridge does not replace doctors, diagnosis, treatment,
+                    or emergency services. If someone may be seriously ill or
+                    injured, seek immediate professional help.
+                </div>
+
+                <a href="emergency.html">
+                    Learn more
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="help">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Find your next step</p>
+                    <h2>What do you need help with?</h2>
+                    <p>Choose a topic to browse relevant educational information.</p>
+                </div>
+
+                <div id="helpFlow" class="help-flow"></div>
+            </div>
+        </section>
+
+        <section class="section section-tint">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
+                    <div class="section-heading mb-0">
+                        <p class="eyebrow">Quick access</p>
+                        <h2>Common emergency topics</h2>
+                    </div>
+
+                    <a href="guides.html" class="text-link">
+                        Explore all guides
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="row g-3" id="quickAccess"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="section-heading">
+                            <p class="eyebrow">Stay ready</p>
+                            <h2>Emergency preparedness, made manageable</h2>
+                            <p>
+                                Small preparations can make it easier to act
+                                thoughtfully during stressful moments.
+                            </p>
+                        </div>
+
+                        <div id="checklistProgress" class="progress-label"></div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="checklist-card">
+                            <div id="checklist"></div>
+
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-4">
+                                <button class="btn btn-link p-0" id="resetChecklist" type="button">
+                                    Reset checklist
+                                </button>
+
+                                <a href="emergency.html" class="text-link">
+                                    View emergency information
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-tint">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Featured</p>
+                    <h2>Popular first-aid guides</h2>
+                </div>
+
+                <div class="row g-4" id="featuredGuides"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <div class="section-heading">
+                            <p class="eyebrow">A simple approach</p>
+                            <h2>How HealthBridge works</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="how-list">
+                            <div>
+                                <span>01</span>
+                                <h4>Find a topic</h4>
+                                <p>Search or browse clear educational guides by situation.</p>
+                            </div>
+
+                            <div>
+                                <span>02</span>
+                                <h4>Read the safety guidance</h4>
+                                <p>
+                                    Review general steps, what to avoid, and signs
+                                    to seek urgent help.
+                                </p>
+                            </div>
+
+                            <div>
+                                <span>03</span>
+                                <h4>Get professional support</h4>
+                                <p>
+                                    Use local emergency and healthcare services
+                                    whenever urgent care is needed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq-section">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <p class="eyebrow">Questions, answered</p>
+                    <h2>Frequently asked questions</h2>
+                </div>
+
+                <div class="accordion mx-auto" id="faq">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#f1"
+                                aria-expanded="true"
+                                aria-controls="f1"
+                            >
+                                Is HealthBridge a replacement for medical care?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="f1"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body">
+                                No. HealthBridge offers general educational information
+                                only. For medical advice, diagnosis, treatment, or
+                                emergencies, contact qualified health professionals
+                                or local emergency services.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#f2"
+                                aria-expanded="false"
+                                aria-controls="f2"
+                            >
+                                What should I do in a serious emergency?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="f2"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body">
+                                Prioritize immediate safety and contact local
+                                emergency services. Follow instructions from
+                                trained professionals.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#f3"
+                                aria-expanded="false"
+                                aria-controls="f3"
+                            >
+                                Can I save guides for later?
+                            </button>
+                        </h3>
+
+                        <div
+                            id="f3"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#faq"
+                        >
+                            <div class="accordion-body">
+                                Yes. Use the bookmark button on any guide. Your
+                                saved guides stay on this device.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <a class="navbar-brand text-white" href="index.html">
+                        <span class="brand-mark">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </span>
+                        HealthBridge
+                    </a>
+
+                    <p class="mt-3">
+                        A calm, educational first-aid information guide for
+                        everyday preparedness.
+                    </p>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6>Explore</h6>
+                    <a href="guides.html">First-aid guides</a>
+                    <a href="emergency.html">Emergency information</a>
+                    <a href="favorites.html">Saved guides</a>
+                </div>
+
+                <div class="col-6 col-lg-4">
+                    <h6>Important notice</h6>
+                    <p>
+                        Educational use only. Not a substitute for professional
+                        medical advice, diagnosis, treatment, or emergency services.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 HealthBridge · Designed for informed preparedness
+            </div>
+        </div>
+    </footer>
+
+    <button
+        class="scroll-top"
+        id="scrollTop"
+        type="button"
+        aria-label="Scroll to top"
+    >
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="appToast" role="status" aria-live="polite">
+            <div class="toast-body d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill text-success"></i>
+                <span></span>
+                <button
+                    class="btn-close ms-auto"
+                    type="button"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"
+                ></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
